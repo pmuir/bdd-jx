@@ -75,7 +75,7 @@ func (r *JxRunner) RunWithOutput(args ...string) string {
 	answer := string(outBytes)
 	coverageOutput := coverageOutputRegex.FindStringSubmatch(answer)
 	if len(coverageOutput) == 3 {
-		utils.LogInfof("when running %s %s coverage was %s", jx, strings.Join(args, " "), coverageOutput[2])
+		utils.LogInfof("when running %s %s coverage was %s\n", jx, strings.Join(args, " "), coverageOutput[2])
 	}
 	answer = coverageOutputRegex.ReplaceAllString(answer, "")
 	return strings.TrimSpace(answer)
